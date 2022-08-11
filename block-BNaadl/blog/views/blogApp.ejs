@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css">
     <title>blog</title>
-</head>
-<body>
-    <header>
-
+  </head>
+  <body>
+    <header class="flex">
+        <small>
+            all blog articles
+        </small>
+        <a href="/Articles/new">Home</a>
     </header>
-    <h1>the blogs</h1>
-    <div class="container">
-        
-    </div>
-    <footer>
-        
-    </footer>
-</body>
+    <h1>the articles</h1>
+    <% if(articles.length) { %> 
+        <% articles.forEach(a => { %>
+            <div class="container">
+              <div>
+                <a href="/Articles/<%= a.id %>">
+                  <h2><%= a.title %></h2>
+                </a>
+              </div>
+            </div>
+            <% }) %> 
+            <% } else { %>
+            <h2>no articalse found</h2>
+        <% } %>
+  </body>
 </html>
