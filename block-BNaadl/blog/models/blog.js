@@ -3,11 +3,12 @@ var Schema = mongoose.Schema;
 
 
 var userSchema = new Schema({
-    name:{type:String,requerd:true},
+    title:{type:String,requerd:true},
     description:String,
-    age:Number,
+    tags:[String],
+    author:String,
     phoneNumber:Number,
-    email:{type:String,requerd:true}
+    likes:Number
 },{timestamps:true});
 
 var Blog = mongoose.model('Blog',userSchema);
