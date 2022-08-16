@@ -25,6 +25,8 @@
                 <h4><% t %></h4>
             <% }) %>  
             <p><%= article.description %> </p>
+            <h4><%= article.author %> </h4>
+            <h4><%= article.phoneNumber %> </h4>
             <h3><%= article.likes ? article.likes: 0%> </h3>
             <div class="flex">
                 <a href="/Articles/<%= article.id %>/likes">
@@ -43,6 +45,10 @@
                     </button>
                 </a>
             </div>
+            <form action="/Articles/<%= article.id %>">
+                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </form>
     </div>
 </body>
 </html>
