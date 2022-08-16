@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>articals detales</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="flex">
+            <small>
+                Blog
+            </small>
+            <div>
+                <a href="/Articles">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="container box-2">
+        <h1><%= article.title %> </h1>
+        <h3><%= article.author.name %> </h3>
+        <% article.tags.forEach(t => { %>
+                <h4><% t %></h4>
+            <% }) %>  
+            <p><%= article.description %> </p>
+            <h4><%= article.author %> </h4>
+            <h4><%= article.phoneNumber %> </h4>
+            <h3><%= article.likes ? article.likes: 0%> </h3>
+            <div class="flex">
+                <a href="/Articles/<%= article.id %>/likes">
+                    <button class="btn-green">
+                        Like
+                    </button>
+                </a>
+                <a href="/Articles/<%= article.id %>/edit">
+                    <button class="btn-blue">
+                        Edit
+                    </button>
+                </a>
+                <a href="/Articles/<%= article.id %>/delete">
+                    <button class="btn-red">
+                        Delete
+                    </button>
+                </a>
+            </div>
+            <form action="/Articles/<%= article.id %>">
+                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </form>
+    </div>
+</body>
+</html>

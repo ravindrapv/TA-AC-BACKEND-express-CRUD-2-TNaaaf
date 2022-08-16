@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="flex">
+            <small>
+                Blog
+            </small>
+            <div>
+                <a href="/Articles">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="container box">
+        <form action="/Articles" method="post">
+            <h1>Add article</h1>
+            <input type="text" name="title" placeholder="enter the titel">
+            <input type="text" class="desc" name="description" placeholder="enter description">
+            <input type="tag" name="tags" placeholder="tags">
+            <input type="text" name="author" placeholder="enter author">
+            <input type="number" name="phoneNumber" placeholder="enter thre number">
+            <input type="submit" class="btn center" value="sumbit">
+        </form>
+    </div>
+</body>
+</html>
